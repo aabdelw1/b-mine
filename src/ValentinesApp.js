@@ -64,7 +64,6 @@ const ValentineApp = () => {
       </Container>
     );
   }
-  console.log(noButtonTexts.length, clickCount)
   return (
     <Container>
       <img

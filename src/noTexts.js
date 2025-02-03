@@ -27,3 +27,36 @@ export const noButtonTexts = [
     "Think of the possibilities!",
     "Isn't life too short for no's?"
   ];
+
+  export const MoreSentamental = [
+      "No",
+      "Are you sure?",
+      "I promise ill actually fix your tire next time",
+      "I'll hike up the mountian with Amu Jamal",
+      "And be a tech bro for Good Tree",
+      "And make Taunt Nadia proud",
+      "We can add another A to the SLAAY",
+      "Which means more car rides with Leen",
+      "And visit Sana at her cafe",
+      "And get you some tea",
+      "And cure her Celiac's",
+      "Lets make not white Amy proud",
+      "As well as Mae and Mus-hab",
+      "along with Laila and Mustafa",
+      "and cant forget Fatima the Egypitan",
+      "And lastely not pop star Ke$ha and Salman",
+      "Group leader would be disappointed in me",
+      "What would Aimen think?",
+      "More importantly what would Nisma think??",
+      "And an 8 hour arm workout",
+      "We can aquariam round 2",
+      "And maybe a tswift concert",
+      "Who's gonna help me build all these legos",
+      "And keep me in line with BDC's training program",
+      "And cheer you on in pilates",
+      "And tell me not to do a 5 day water fast",
+      "Think of the possibilities!",
+      "Take the leap of faith",
+      "Aseel",
+      "🥺"
+  ]
