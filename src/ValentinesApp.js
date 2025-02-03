@@ -34,6 +34,10 @@ const Button = styled.button`
   @media (max-width: 768px) {
     margin-top: ${(props) => (!props.isYesButton ? "20px" : "0")};
   }
+
+  @media (max-width: 768px) {
+    margin-bottom: ${(props) => (!props.isNoButton ? "20px" : "0")};
+  }
 `;
 
 const ValentineApp = () => {
@@ -47,8 +51,8 @@ const ValentineApp = () => {
 
   const handleNoClick = () => {
     setYesButtonStyle((prevStyle) => ({
-      padding: prevStyle.padding + 10,
-      fontSize: prevStyle.fontSize + 10,
+      padding: prevStyle.padding + 5,
+      fontSize: prevStyle.fontSize + 5,
     }));
     setClickCount(clickCount + 1);
     setNoButtonTextIndex((prevIndex) => (prevIndex + 1) % noButtonTexts.length);
@@ -83,7 +87,7 @@ const ValentineApp = () => {
           Yes
         </Button>
         {clickCount <= noButtonTexts.length - 1 && (
-          <Button onClick={handleNoClick} style={{ marginTop: "10px" }}>
+          <Button onClick={handleNoClick} style={{ marginTop: "10px" }} isNoButton>
             {noButtonTexts[noButtonTextIndex]}
           </Button>
         )}
