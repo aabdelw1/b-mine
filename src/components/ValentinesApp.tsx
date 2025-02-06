@@ -84,11 +84,7 @@ const ValentineApp: React.FC = () => {
 
   return (
     <Container>
-      <img
-        src="/assets/images/rose-cute.gif"
-        alt="Cute rose"
-        style={{ marginBottom: '1px' }}
-      />
+      <img src="/assets/images/rose-cute.gif" alt="Cute rose" />
 
       <Question>Will you be my valentine?</Question>
       <div>
@@ -103,7 +99,7 @@ const ValentineApp: React.FC = () => {
         {clickCount <= noButtonTexts.length - 1 && (
           <Button
             onClick={handleNoClick}
-            style={{ marginTop: '10px' }}
+            style={{ marginTop: '-5px', marginBottom: '25px' }}
             $isNoButton
           >
             {noButtonTexts[noButtonTextIndex]}
