@@ -45,18 +45,8 @@ npm run build
 
 ---
 
-## 🎵 Audio Feature
-- A **romantic background music track** plays automatically to set the mood.
-- Users can **mute or unmute** the music using a button in the top-right corner.
-- The audio **loops continuously** for an immersive experience.
-
----
-
 ## 📸 Screenshots
 ![Screenshot 2025-02-05 at 9 25 32 PM](https://github.com/user-attachments/assets/6d3ff7c5-2f87-45c5-bab3-bb9f44fcc511)
-![Screenshot 2025-02-05 at 9 25 40 PM](https://github.com/user-attachments/assets/e8eea4c3-d44e-4dea-bfd8-df811472581f)
-![Screenshot 2025-02-05 at 9 25 45 PM](https://github.com/user-attachments/assets/79b01fc6-7216-4581-87ce-975d075fb1d3)
-
 
 ---
 
