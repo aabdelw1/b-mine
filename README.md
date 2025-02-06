@@ -9,6 +9,8 @@ When the user clicks **"No"**, the "Yes" button gets bigger, making it harder to
 - **Dynamic Button Resizing** – The "Yes" button grows when "No" is clicked 📏
 - **Fun Responses** – Custom text changes on the "No" button 😆
 - **Celebratory Ending** – A fun animation when the user accepts! 🎊
+- **Background Music** – A romantic audio track plays in the background 🎶
+- **Audio Toggle** – Users can mute/unmute the music using an audio button 🎵
 
 ---
 
@@ -43,6 +45,13 @@ npm run build
 
 ---
 
+## 🎵 Audio Feature
+- A **romantic background music track** plays automatically to set the mood.
+- Users can **mute or unmute** the music using a button in the top-right corner.
+- The audio **loops continuously** for an immersive experience.
+
+---
+
 ## 📸 Screenshots
 Coming soon! (Or add your own screenshots here)
 
@@ -52,6 +61,7 @@ Coming soon! (Or add your own screenshots here)
 - **React** – For building the UI
 - **Styled-components** – For styling the app
 - **JavaScript (ES6+)** – For interactivity
+- **HTML5 Audio** – For background music support
 
 ---
 
@@ -67,3 +77,4 @@ If you have cute ideas to make this app even more fun, feel free to submit a pul
 
 ### 💡 Fun Idea
 Try sending this app to someone special and see if they can say "No"! 😉💘
+
