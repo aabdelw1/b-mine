@@ -1,7 +1,7 @@
 import React from "react";
-import './App.css';
-import ValentineApp from './ValentinesApp';
-import AudioToggle from "./AudioToggle";
+import './styles/App.css';
+import ValentineApp from './components/ValentinesApp';
+import AudioToggle from "./components/AudioToggle";
 
 function App() {
   return (

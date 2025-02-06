@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { noButtonTexts } from "./noTexts";
-import AudioToggle from "./AudioToggle";
+import { noButtonTexts } from "../utils/noTexts";
 
+
+interface ButtonProps {
+  isYesButton?: boolean;
+  isNoButton?: boolean;
+  padding?: number;
+  fontSize?: number;
+}
+
+// Styled Container
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -11,26 +19,28 @@ const Container = styled.div`
   height: 100vh;
 `;
 
+// Styled Question Text
 const Question = styled.h2`
   margin-bottom: 20px;
 `;
 
-const Button = styled.button`
+// Styled Button
+const Button = styled.button<ButtonProps>`
   background-color: ${(props) => (props.isYesButton ? "#4CBB17" : "red")};
   color: white;
   border: none;
   border-radius: 5px;
   padding: ${(props) =>
     props.isYesButton
-      ? `${props.padding}px ${props.padding + 15}px`
+      ? `${props.padding}px ${props.padding! + 15}px`
       : "10px 30px"};
   font-size: ${(props) => (props.isYesButton ? `${props.fontSize}px` : "25px")};
   margin: 0 10px;
   cursor: pointer;
+
   &:hover {
     opacity: 0.8;
   }
-  /* transition: all 0.2s ease; */
 
   @media (max-width: 768px) {
     margin-top: ${(props) => (!props.isYesButton ? "20px" : "0")};
@@ -41,39 +51,42 @@ const Button = styled.button`
   }
 `;
 
-const ValentineApp = () => {
-  const [yesButtonStyle, setYesButtonStyle] = useState({
+const ValentineApp: React.FC = () => {
+  // Define state types
+  const [yesButtonStyle, setYesButtonStyle] = useState<{ padding: number; fontSize: number }>({
     padding: 10,
     fontSize: 25,
   });
-  const [noButtonTextIndex, setNoButtonTextIndex] = useState(0);
-  const [isAccepted, setIsAccepted] = useState(false);
-  const [clickCount, setClickCount] = useState(0);
 
-  const handleNoClick = () => {
+  const [noButtonTextIndex, setNoButtonTextIndex] = useState<number>(0);
+  const [isAccepted, setIsAccepted] = useState<boolean>(false);
+  const [clickCount, setClickCount] = useState<number>(0);
+
+  const handleNoClick = (): void => {
     setYesButtonStyle((prevStyle) => ({
       padding: prevStyle.padding + 5,
       fontSize: prevStyle.fontSize + 5,
     }));
-    setClickCount(clickCount + 1);
+    setClickCount((prev) => prev + 1);
     setNoButtonTextIndex((prevIndex) => (prevIndex + 1) % noButtonTexts.length);
   };
-  const handleYesClick = () => {
+
+  const handleYesClick = (): void => {
     setIsAccepted(true);
   };
 
   if (isAccepted) {
     return (
       <Container>
-        {/* <AudioToggle />  */}
-        <img src="/yay.gif" alt="Celebration" />
+        <img src="/assets/images/yay.gif" alt="Celebration" />
       </Container>
     );
   }
+
   return (
     <Container>
       <img
-        src="/rose-cute.gif"
+        src="/assets/images/rose-cute.gif"
         alt="Cute rose"
         style={{ marginBottom: "1px" }}
       />

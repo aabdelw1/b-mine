@@ -1,4 +1,4 @@
-export const noButtonTexts = [
+export const noButtonTexts: string[] = [
     "No",
     "Are you sure?",
     "Reconsider this",
