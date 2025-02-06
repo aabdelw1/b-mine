@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { noButtonTexts } from "./noTexts";
+import AudioToggle from "./AudioToggle";
 
 const Container = styled.div`
   display: flex;
@@ -64,6 +65,7 @@ const ValentineApp = () => {
   if (isAccepted) {
     return (
       <Container>
+        {/* <AudioToggle />  */}
         <img src="/yay.gif" alt="Celebration" />
       </Container>
     );
