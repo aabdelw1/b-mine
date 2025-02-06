@@ -34,7 +34,7 @@ const AudioToggle = (): JSX.Element => {
   return (
     <Container onClick={toggleAudio}>
       <audio ref={audioRef} loop muted>
-        <source src="/forever.mp3" type="audio/mpeg" />
+        <source src="/assets/audio/forever.mp3" type="audio/mpeg" />
       </audio>
 
       <Icon
