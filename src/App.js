@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import './styles/App.css';
 import ValentineApp from './components/ValentinesApp';
-import AudioToggle from "./components/AudioToggle";
+import AudioToggle from './components/AudioToggle';
 
 function App() {
   return (
     <div className="App">
-      <AudioToggle /> 
+      <AudioToggle />
       <header className="App-header">
-        <ValentineApp/>
+        <ValentineApp />
       </header>
     </div>
   );

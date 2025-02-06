@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { noButtonTexts } from "../utils/noTexts";
-
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { noButtonTexts } from '../utils/noTexts';
 
 interface ButtonProps {
-  isYesButton?: boolean;
-  isNoButton?: boolean;
-  padding?: number;
-  fontSize?: number;
+  $isYesButton?: boolean;
+  $isNoButton?: boolean;
+  $padding?: number;
+  $fontSize?: number;
 }
 
-// Styled Container
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,22 +17,21 @@ const Container = styled.div`
   height: 100vh;
 `;
 
-// Styled Question Text
 const Question = styled.h2`
   margin-bottom: 20px;
 `;
 
-// Styled Button
 const Button = styled.button<ButtonProps>`
-  background-color: ${(props) => (props.isYesButton ? "#4CBB17" : "red")};
+  background-color: ${(props) => (props.$isYesButton ? '#4CBB17' : 'red')};
   color: white;
   border: none;
   border-radius: 5px;
   padding: ${(props) =>
-    props.isYesButton
-      ? `${props.padding}px ${props.padding! + 15}px`
-      : "10px 30px"};
-  font-size: ${(props) => (props.isYesButton ? `${props.fontSize}px` : "25px")};
+    props.$isYesButton
+      ? `${props.$padding}px ${props.$padding! + 15}px`
+      : '10px 30px'};
+  font-size: ${(props) =>
+    props.$isYesButton ? `${props.$fontSize}px` : '25px'};
   margin: 0 10px;
   cursor: pointer;
 
@@ -43,19 +40,21 @@ const Button = styled.button<ButtonProps>`
   }
 
   @media (max-width: 768px) {
-    margin-top: ${(props) => (!props.isYesButton ? "20px" : "0")};
+    margin-top: ${(props) => (!props.$isYesButton ? '20px' : '0')};
   }
 
   @media (max-width: 768px) {
-    margin-bottom: ${(props) => (!props.isNoButton ? "20px" : "0")};
+    margin-bottom: ${(props) => (!props.$isNoButton ? '20px' : '0')};
   }
 `;
 
 const ValentineApp: React.FC = () => {
-  // Define state types
-  const [yesButtonStyle, setYesButtonStyle] = useState<{ padding: number; fontSize: number }>({
-    padding: 10,
-    fontSize: 25,
+  const [yesButtonStyle, setYesButtonStyle] = useState<{
+    $padding: number;
+    $fontSize: number;
+  }>({
+    $padding: 10,
+    $fontSize: 25,
   });
 
   const [noButtonTextIndex, setNoButtonTextIndex] = useState<number>(0);
@@ -64,8 +63,8 @@ const ValentineApp: React.FC = () => {
 
   const handleNoClick = (): void => {
     setYesButtonStyle((prevStyle) => ({
-      padding: prevStyle.padding + 5,
-      fontSize: prevStyle.fontSize + 5,
+      $padding: prevStyle.$padding + 5,
+      $fontSize: prevStyle.$fontSize + 5,
     }));
     setClickCount((prev) => prev + 1);
     setNoButtonTextIndex((prevIndex) => (prevIndex + 1) % noButtonTexts.length);
@@ -88,21 +87,25 @@ const ValentineApp: React.FC = () => {
       <img
         src="/assets/images/rose-cute.gif"
         alt="Cute rose"
-        style={{ marginBottom: "1px" }}
+        style={{ marginBottom: '1px' }}
       />
 
       <Question>Will you be my valentine?</Question>
       <div>
         <Button
-          isYesButton
-          padding={yesButtonStyle.padding}
-          fontSize={yesButtonStyle.fontSize}
+          $isYesButton
+          $padding={yesButtonStyle.$padding}
+          $fontSize={yesButtonStyle.$fontSize}
           onClick={handleYesClick}
         >
           Yes
         </Button>
         {clickCount <= noButtonTexts.length - 1 && (
-          <Button onClick={handleNoClick} style={{ marginTop: "10px" }} isNoButton>
+          <Button
+            onClick={handleNoClick}
+            style={{ marginTop: '10px' }}
+            $isNoButton
+          >
             {noButtonTexts[noButtonTextIndex]}
           </Button>
         )}
