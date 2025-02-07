@@ -87,6 +87,7 @@ const ValentineApp: React.FC = () => {
       <img src="/assets/images/rose-cute.gif" alt="Cute rose" />
 
       <Question>Will you be my valentine?</Question>
+      <Question>By Ammar for Aseel</Question>
       <div>
         <Button
           $isYesButton
