@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { noButtonTexts } from '../utils/noTexts';
+import logUserAction from '../utils/logger';
 
 interface ButtonProps {
   $isYesButton?: boolean;
@@ -68,10 +69,12 @@ const ValentineApp: React.FC = () => {
     }));
     setClickCount((prev) => prev + 1);
     setNoButtonTextIndex((prevIndex) => (prevIndex + 1) % noButtonTexts.length);
+    logUserAction('Clicked No');
   };
 
   const handleYesClick = (): void => {
     setIsAccepted(true);
+    logUserAction('Clicked Yes');
   };
 
   if (isAccepted) {

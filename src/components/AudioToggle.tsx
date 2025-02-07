@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, JSX } from 'react';
 import styled from 'styled-components';
+import logUserAction from '../utils/logger';
 
 const Container = styled.div`
   position: absolute;
@@ -42,7 +43,10 @@ const AudioToggle = (): JSX.Element => {
       if (!newMutedState) {
         audioRef.current
           .play()
+          .then(() => logUserAction('Audio Unmuted'))
           .catch((error) => console.warn('Playback issue:', error));
+      } else {
+        logUserAction('Audio Muted');
       }
     }
   };
