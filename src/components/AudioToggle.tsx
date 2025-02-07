@@ -1,4 +1,4 @@
-import React, { useState, useRef, JSX } from 'react';
+import React, { useState, useRef, useEffect, JSX } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -16,6 +16,22 @@ const Icon = styled.img`
 const AudioToggle = (): JSX.Element => {
   const [isMuted, setIsMuted] = useState<boolean>(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    const handleUserInteraction = () => {
+      if (audioRef.current) {
+        audioRef.current.muted = false;
+        audioRef.current
+          .play()
+          .catch((error) => console.warn('Playback issue:', error));
+        setIsMuted(false);
+        document.removeEventListener('click', handleUserInteraction);
+      }
+    };
+
+    document.addEventListener('click', handleUserInteraction);
+    return () => document.removeEventListener('click', handleUserInteraction);
+  }, []);
 
   const toggleAudio = () => {
     if (audioRef.current) {
